@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <title>Pagina Inicial</title>
+   
+</head>
+<style>
+    .container-menu {
+        position: relative;
+        width: 305px;
+        display: inline-block;
+        margin: 5px;
+        vertical-align: top;
+    }
+
+    .background-menu {
+        background: white;
+        height: 148px;
+        width: 100%
+    }
+
+    .bar-menu-right,
+    .bar-menu-left {
+        box-sizing: border-box;
+        background: #3F5185;
+        color: white;
+        width: 100%;
+        padding: 16px;
+    }
+
+    .bar-menu-right {
+        text-align: right;
+    }
+
+    .bar-menu-left {
+        text-align: left;
+    }
+
+    .mdl-grid {
+        min-height: 320px;
+        color: #757575 !important;
+    }
+
+    .background-cinza {
+        background: rgb(226, 222, 222);
+        min-height: 50px;
+
+    }
+
+    .transparent {
+        background: cornflowerblue;
+    }
+
+    /*
+    .mdl-cell {
+        background-color: #bbb;
+        height: 50px;
+    }
+*/
+    nav.mdl-navigation .mdl-badge[data-badge]:after {
+        top: 5px;
+        right: -8px;
+    }
+
+    @media screen and (max-width: 400px) {
+        .esconde-celular {
+            display: none;
+        }
+        nav.mdl-navigation .mdl-badge[data-badge]:after {
+            right: 5px;
+        }
+    }
+
+    @media screen and (min-width: 401px) {
+        .mostrar-celular {
+            display: none;
+        }
+    }
+
+    /*
+alterar tamanho do icon
+*/
+    .md-18 {
+        font-size: 18px;
+    }
+
+    .md-24 {
+        font-size: 24px;
+    }
+
+    .md-36 {
+        font-size: 36px;
+    }
+
+    .md-48 {
+        font-size: 48px;
+    }
+
+    .laranja {
+        color: #fb8c00
+    }
+
+    .verde {
+        color: #a4c639
+    }
+
+    /*
+chama mdl-car__title e informa que ela e filha da 
+demonstração
+*/
+
+    .demonstracao-card {
+        width: 512px;
+    }
+
+    .demonstracao-card>.mdl-card__menu {
+        color: #ffff;
+
+    }
+
+    .mdl-cell {
+        background-color: #bbb;
+        height: 50px;
+
+    }
+
+    .demonstracao-card>.mdl-card__title {
+        color: #fff;
+        height: 176px;
+        background: url('img/DSC_0096.JPG') center /cover
+    }
+
+    .mdl-menu__item a {
+        color: rgba(0, 0, 0, .87);
+        text-decoration: none;
+    }
+
+    .mdl-menu__item a:hover {
+        color: rgba(0, 0, 0, .87);
+        text-decoration: none;
+    }
+</style>
+
+<body>
+
+
+<div class=" mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">
+                    SKYENG
+                </span>
+            </div>
+        </header>
+                <div class="mdl-cell mdl-cell--12-col">
+                        <h3>Cards</h3>
+                        <div class="background-cinza">
+
+                            <!-- tamanho da sompra-->
+                            <div class="mdl-card mdl-shadow--4dp demonstracao-card">
+                                <div class="mdl-card__title">
+                                    <h2 class="mdl-card__title-text">Titulo do cartão</h2>
+                                </div>
+                                <div class="mdl-card__supporting-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque a nihil, expedita explicabo aut commodi culpa ratione doloremque
+                                    nam. Tenetur sed ea rem esse cupiditate ratione, quidem magnam quaerat adipisci?
+                                </div>
+
+                                <div class="mdl-card__actions mdl-card--border">
+                                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"> Botão2</button>
+                                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised"> Botão2</button>
+                                </div>
+                                <div class="mdl-card__menu">
+                                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                            <i class="material-icons">share</i></button>
+                                       
+                                    </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+        <div style="text-align:center" class="mdl-cell mdl-cell--12-col">
+           
+            <div   class="background-cinza">
+            <!-- tamanho da sompra-->
+                <div class="mdl-card mdl-shadow--4dp demonstracao-card">
+                    <div class="mdl-card__title">
+                       <h2 style="text-align:center" class="mdl-card__title-text">Titulo do cartão</h2>
+                    </div>
+                    <div  style="text-align:center"class="mdl-card__supporting-text">
+                                  Nossa empresa tem como prioridade a construção do softwares,
+                                  otimizados, que tornan a gestão, simples e funcional.
+                    </div>
+
+                    <div style="text-align:center" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" id="user" type="text" pattern="[A-Z,a-z, ]*">
+                        <label class="mdl-textfield__label" for="user">Login</label>
+                        <!-- Fazer validação e passar numeros-->
+                        <span class="mdl-textfield__error">Apenas Letras e Espaços</span>
+                    </div>
+
+                    <div style="text-align:center" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" id="user" type="text" pattern="[A-Z,a-z, ]*">
+                        <label class="mdl-textfield__label" for="user">Senha</label>
+                        <!-- Fazer validação e passar numeros-->
+                        <span class="mdl-textfield__error">Apenas Letras e Espaços</span>
+                    </div>
+
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised"> Login</button>
+                    </div>
+
+                </div>
+            </div>
+         </div>
+
+
+
+
+
+
+
+
+            
+            
+            </main>
+            </div>
+
+
+
+
+
+
+</div>
+</body>
+</html>

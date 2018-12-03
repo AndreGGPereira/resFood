@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <title>Designer</title>
+</head>
+
+<style>
+    .mdl-grid {
+        min-height: 320px;
+        color: #757575 !important;
+    }
+
+    .background-cinza {
+        background: rgb(226, 222, 222);
+        min-height: 50px;
+
+    }
+
+    .transparent {
+        background: cornflowerblue;
+    }
+
+    /*
+    .mdl-cell {
+        background-color: #bbb;
+        height: 50px;
+
+    }
+*/
+    nav.mdl-navigation .mdl-badge[data-badge]:after {
+        top: 5px;
+        right: -8px;
+    }
+    @media screen and (max-width: 400px) {
+        .esconde-celular {
+            display: none;
+        }
+        nav.mdl-navigation .mdl-badge[data-badge]:after {
+            right: 5px;
+        }
+    }
+    @media screen and (min-width: 401px) {
+        .mostrar-celular {
+            display: none;
+        }
+    }
+    /*
+alterar tamanho do icon
+*/
+    .md-18 {
+        font-size: 18px;
+    }
+    .md-24 {
+        font-size: 24px;
+    }
+    .md-36 {
+        font-size: 36px;
+    }
+    .md-48 {
+        font-size: 48px;
+    }
+    .laranja {
+        color: #fb8c00
+    }
+    .verde {
+        color: #a4c639
+    }
+    /*
+chama mdl-car__title e informa que ela e filha da 
+demonstração
+*/
+    .demonstracao-card {
+        width: 800px;
+    }
+    .demonstracao-card > .mdl-card__menu {
+        color: #ffff;
+    }
+    .demonstracao-card>.mdl-card__title {
+        color: #fff;
+        height: 176px;
+        background: url('../img/DSC0096.jpg') center /cover
+    }
+</style>
+
+<body>
+
+    <!-- Para colocar menu fixo mdl-layout--fixed-drawer-->
+
+    <div class=" mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">
+                    Nome Empresa
+                </span>
+                <!-- div para dar espaçamento-->
+                <div class="mdl-layout-spacer"></div>
+                <!-- menu com links na parte superior-->
+            </div>
+        </header>
+        <!-- menu aparti do cabeçalho-->
+       
+        <div class="mdl-layout__content">
+            <main>
+                <div align="center" class="mdl-grid">
+                    <!-- Grids dentro da pagina-->
+                    <!-- Padão são 3 colunas icon 24px-->
+                    <div class="mdl-cell mdl-cell--12-col">
+                    <h5>Nome Sistema</h5>
+                    
+                        <div class="background-cinza">
+                            <!-- tamanho da sompra-->
+                            <div class="mdl-card mdl-shadow--4dp demonstracao-card">
+                                <div class="mdl-card__title">
+                                    Espaço logo - Pagina Login
+                                </div>
+                                
+                                <div class="mdl-card__supporting-text">
+                                 Nossa empresa tem como prioridade a construção do softwares,
+                                  otimizados, que tornan a gestão, simples e funcional.<br>
+                                </div>
+
+                            <form method="post">
+                          
+                                <div style="text-align:center" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                  <input class="mdl-textfield__input" id="login" type="text" name="login" >
+                                  <label class="mdl-textfield__label" for="login">Login</label>
+                                </div>
+
+                                <div style="text-align:center" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                  <input type="password" class="mdl-textfield__input" id="senha" type="text" name="senha">
+                                  <label class="mdl-textfield__label" for="senha">Senha</label>
+                                </div>
+
+                                <div class="mdl-card__actions mdl-card--border">
+                                   <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised"> Login</button>
+                                </div>
+                                
+                                <div class="mdl-card__menu">
+                                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                                    <i class="material-icons">share</i>
+                                    </button>
+                                </div>
+
+                                <div class="mdl-card__supporting-text">
+                                   Voce e novo por aqui? <a href="/signup">Saiba mais</a>
+                                </div>
+                                
+                                  <div class="mdl-card__supporting-text">
+                                   <a href="/signup">Esqueceu sua senha?</a>
+                                </div>
+
+                                  <div class="mdl-card__supporting-text">
+                                   <a href="/cadEstado">Cadastro Estado</a>
+                                </div>
+
+                                   <div class="mdl-card__supporting-text">
+                                   <a href="/listaEstado">listar Estado</a>
+                                </div>
+
+                                 </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- esconder dados polo tipo do produto ex: desktop, tablet o phone "mdl-cell--hine-desktop"-->
+                </div>
+            </main>
+
+
+            </div>
+        </div>
+</body>
+
+</html>
