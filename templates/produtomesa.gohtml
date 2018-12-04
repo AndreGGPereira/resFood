@@ -204,7 +204,8 @@ automaticamente ao definirmos o conteudo-right com 500px e à esquerda também, 
                 <div class="mostrar-celular">
                     <a href="#" class="mdl-navigation__link mdl-badge" data-badge="5">Notificações</a>
                     <a href="#" class="mdl-navigation__link mdl-badge" data-badge="10">Pendencias</a>
-                    <a href="/logout" class="mdl-navigation__link" data-badge="10">Sair</a>
+                      <a href="/logout" class="mdl-navigation__link" data-badge="10">Sair</a>
+                  
                 </div>
             </nav>
 
@@ -226,7 +227,7 @@ automaticamente ao definirmos o conteudo-right com 500px e à esquerda também, 
 
                     <div id="conteudo-right">
                       <div class="mdl-cell mdl-cell--12-col">
-                        <h5>Lista de usuarios</h5>
+                        <h5>Lista de produtos da mesa</h5>
                             <div class="background-cinza">
                                
                                 <table width="100%" class="mdl-data-table mdl-js-data-table mdl-shadow--4dp mdl-data-table--selectable">
@@ -235,21 +236,20 @@ automaticamente ao definirmos o conteudo-right com 500px e à esquerda também, 
                                         <!--usa th quando for no titulo-->
                                         <!--classe usanda para alinhar-->
                                         <th class="mdl-data-table__cell--non-numeric">ID</th>
-                                        <th class="mdl-data-table__cell--non-numeric">Nome</th>
-                                        <th class="mdl-data-table__cell--non-numeric">Login</th>
-                                        <th class="mdl-data-table__cell--non-numeric">Permissão</th>
+                                        <th class="mdl-data-table__cell--non-numeric">Quantidade</th>
+                                        <th class="mdl-data-table__cell--non-numeric">ValorUnitario</th>
+                                          <th class="mdl-data-table__cell--non-numeric">ValorTotal</th>
+                                        
                                     </tr>
             
                                 <form>
-                                <tbody>{{range .Usuarios}}
+                                <tbody>{{range .ProdutoMesa}}
                                     <tr id="{{.ID}}">
                                         <td class="mdl-data-table__cell--non-numeric">{{.ID}}  </td>
-                                        <td class="mdl-data-table__cell--non-numeric">{{.Nome}}  </td>
-                                        <td class="mdl-data-table__cell--non-numeric">{{.Login}}  </td>
-                                        <td class="mdl-data-table__cell--non-numeric">{{.Permissao.Nome}}  </td>
-                                        <td class="mdl-data-table__cell--non-numeric"><a href="/altusuario?id={{.ID}}">Alterar</a></td>
-                                        <td class="mdl-data-table__cell--non-numeric"><a href="/delusuario?id={{.ID}}">Remover</a></td>
-                                   </tr>
+                                        <td class="mdl-data-table__cell--non-numeric">{{.Quantidade}}  </td>
+                                        <td class="mdl-data-table__cell--non-numeric">{{.ValorUnidade}}  </td>
+                                         <td class="mdl-data-table__cell--non-numeric">{{.ValorTotal}}  </td>
+                                    </tr>
                                        {{end}}
                                 </tbody>
                                 </form>
@@ -259,44 +259,45 @@ automaticamente ao definirmos o conteudo-right com 500px e à esquerda também, 
                         </div>
                     </div>    
 
+
             <div id="conteudo-left" align="center">
                 <div  align="center" class="mdl-cell mdl-cell--12-col">
-                        <h5>Cadastro Usuario</h5>
+                        <h5>Inserir produtos na mesa</h5>
                    <div class="background-cinza">
                        <div width="95%" class="mdl-card mdl-shadow--4dp ">                  
-                        <form action="/usuario"  width="95%" method="post">
-
-                        <input type="hidden" name="id" value="{{.Usuario.ID}}"/>
+                        <form  width="95%" method="post">
                           
                             <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input  class="mdl-textfield__input" id="nome" placeholder="nome" required type="text" name="nome" value="{{.Usuario.Nome}}" >
-                                <label class="mdl-textfield__label" for="nome">  Nome</label>
+                                <input  class="mdl-textfield__input" id="quantidade" type="text" name="quantidade" >
+                                <label class="mdl-textfield__label" for="quantidade">  Quantidade</label>
                             </div>
 
-                              <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input  class="mdl-textfield__input" id="login" placeholder="email" required type="email" name="login" value="{{.Usuario.Login}}" >
-                                <label class="mdl-textfield__label" for="login">  Login</label>
-                            </div>
-
-                              <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input  class="mdl-textfield__input" id="senha" required placeholder="senha"  type="password" name="senha"  >
-                                <label class="mdl-textfield__label" for="senha">  Senha</label>
-                            </div>
+                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <select class="mdl-textfield__input" id="produto" name="produto">
+                            <option></option>
+                                {{range .Produto}} 
+                                  <option type="hidden" name=produto value="{{.ID}}">{{.Nome}}</option>
+                                {{end}}
+                        </select>
+                        <label class="mdl-textfield__label" for="produto">Produto</label>
+                    </div>
 
                           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                              <select class="mdl-textfield__input" id="permissao" placeholder="permissao" required name="permissao" value="{{.Usuario.Permissao.ID}}" >
-                              <option value="{{.Usuario.Permissao.ID}}">{{.Usuario.Permissao.Nome}}</option>
-                        {{range .Permissao}} 
-                        <option type="hidden" name=permissao value="{{.ID}}">{{.Nome}}</option>
+                              <select class="mdl-textfield__input" id="mesa" name="mesa">
+                              <option></option>
+                        {{range .Mesa}} 
+                        <option type="hidden" name="mesa" value="{{.ID}}">{{.Numero}}</option>
                         {{end}}
                     </select>
-                    <label class="mdl-textfield__label" for="permissao">Permissão</label>
+                    <label class="mdl-textfield__label" for="mesa">Mesa</label>
                 </div>
 
                 <div class="mdl-card__actions mdl-card--border">
                     <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised"> Cadastro</button>
                 </div>
                 </form>
+
+
                         </div>
                     </div>
                 </div>
